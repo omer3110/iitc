@@ -191,26 +191,26 @@
 // }
 // console.log(`The lowest number is ${min_num} and the highest is ${max_num}`);
 
-//// loop_10_m
-// let number = +prompt("Please enter a number:");
-// let divisor = 1;
-// while (number >= divisor * 10) {
-//     divisor *= 10;
-// }
-// while (divisor >= 1) {
-//     let digit = Math.floor(number / divisor);
-//     console.log(digit);
-//     number %= divisor;
-//     divisor /= 10;
-// }
-
-//// loop_11_m
-let random_number = Math.floor(Math.random() * 100) + 1;
-// console.log(random_number);
-let user_guess = +prompt("Please guess a number between 1 to 100: ");
-let count_guess = 1;
-while (user_guess != random_number) {
-    user_guess = +prompt("Please guess a number between 1 to 100: ");
-    count_guess++
+// loop_10_m
+let number = +prompt("Please enter a number:");
+let divisor = 1;
+while (number >= divisor * 10) {
+    divisor *= 10;
 }
-alert(`You succeed it took ${count_guess} tries`)
+while (divisor >= 1) {
+    let digit = Math.floor(number / divisor);
+    console.log(digit);
+    number %= divisor;
+    divisor /= 10;
+}
+
+// //// loop_11_m
+// let random_number = Math.floor(Math.random() * 100) + 1;
+// // console.log(random_number);
+// let user_guess = +prompt("Please guess a number between 1 to 100: ");
+// let count_guess = 1;
+// while (user_guess != random_number) {
+//     user_guess = +prompt("Please guess a number between 1 to 100: ");
+//     count_guess++
+// }
+// alert(`You succeed it took ${count_guess} tries`)
