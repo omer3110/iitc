@@ -142,26 +142,44 @@
 // let number = +prompt("Please enter a number to check if is in array: ");
 // console.log(is_in_array(number, num_array));
 
-//// array_2.7_m   כתוב פונקציה שמקבלת  שני מערכים של  מספרים שלמים כארגומנטים. שני המערכים הם באותו אורך ומכילים מספרים ללא חזרות . החזר  את מספר האיברים שמופיעים בשני המערכים. 
-function is_in_both_arrays(array1, array2) {
-    let count_in_both = 0;
-    let countedSet = new Set();
-    for (let i = 0; i < array1.length; i++) {
-        if (array2.includes(array1[i]) && !countedSet.has(array1[i])) {
-            count_in_both++;
-            countedSet.add(array1[i]);
-        }
-    }
-    return count_in_both;
-}
-let array1_num = [1, 3, 7, 88, 1, 12];
-let array2_num = [9, 3, 8, 88, 1, 5];
-console.log(is_in_both_arrays(array1_num, array2_num));
-// for (i = 0; i < array1.length; i++) {
-//     for (j = 0; j < array2.length; j++) {
-//         if (array1[i] == array2[j]) {
+//// array_2.7_m   כתוב פונקציה שמקבלת  שני מערכים של  מספרים שלמים כארגומנטים. שני המערכים הם באותו אורך ומכילים מספרים ללא חזרות . החזר  את מספר האיברים שמופיעים בשני המערכים.
+// function is_in_both_arrays(array1, array2) {
+//     let count_in_both = 0;
+//     let countedSet = new Set();
+//     for (let i = 0; i < array1.length; i++) {
+//         if (array2.includes(array1[i]) && !countedSet.has(array1[i])) {
 //             count_in_both++;
-//             break
+//             countedSet.add(array1[i]);
 //         }
 //     }
+//     return count_in_both;
+// }
+// let array1_num = [1, 3, 7, 88, 1, 12];
+// let array2_num = [9, 3, 8, 88, 1, 5];
+// console.log(is_in_both_arrays(array1_num, array2_num));
+
+
+// function count_unique(array) {
+//     let new_array = [];
+//     for (i of array) {
+//         if (!new_array.includes(i)) {
+//             new_array.push(i);
+//         }
+//     }
+//     return new_array.length;
+// }
+// let array2_num = [9, 9, 8, 8, 8, 5];
+// console.log(count_unique(array2_num));
+
+// console.log(count_unique(new Set(array2_num)));
+
+
+
+// let str = "name:nathan , family:krasney , city:haifa";
+// function max_value(string) {
+//     let array = str.split(',');
+//     for (i of array) {
+
+//     }
+
 // }
