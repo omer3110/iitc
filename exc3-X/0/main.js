@@ -47,26 +47,20 @@ function winByRow(boardXO, boardSize) {
     }
     return false;
 }
-
 function winByCol(boardXO, boardSize) {
-    let countX = 0, countO = 0;
-    for (y = 0; y < boardSize; y++) {
-        for (x = 0; x < boardSize; x++) {
+    for (let y = 0; y < boardSize; y++) {
+        let countX = 0, countO = 0;
+        for (let x = 0; x < boardSize; x++) {
             if (boardXO[x][y].toLowerCase() == 'x') {
                 countX++;
             }
             if (boardXO[x][y].toLowerCase() == 'o') {
-                countX++;
+                countO++;
             }
         }
-        if (countX == boardSize) {
-            return true;
-
-        }
-        if (countO == boardSize) {
+        if (countX == boardSize || countO == boardSize) {
             return true;
         }
-        countX = 0, countO = 0;
     }
     return false;
 }
@@ -137,15 +131,33 @@ function printBoard(boardXO, boardSize) {
         console.log(boardXO[i]);
     }
 }
-
+// function printBoard(boardXO, boardSize) {
+//     const xColor = '\x1b[31m'; // Red color for X
+//     const oColor = '\x1b[34m'; // Blue color for O
+//     const resetColor = '\x1b[0m'; // Reset color back to default
+//     for (let i = 0; i < boardSize; i++) {
+//         let row = '';
+//         for (let j = 0; j < boardSize; j++) {
+//             let cell = boardXO[i][j];
+//             if (cell === 'X') {
+//                 row += `${xColor}${cell}${resetColor} `;
+//             } else if (cell === 'O') {
+//                 row += `${oColor}${cell}${resetColor} `;
+//             } else {
+//                 row += `${cell} `;
+//             }
+//         }
+//         console.log(row);
+//     }
+// }
 console.log('Welcome to my X/O game');
 let nameX = prompt("Please enter player X name ");
 while (nameX == '') {
-    nameX = prompt("Can not insert empty name. Please enter player X name ");
+    nameX = prompt("Player X name cannot be empty. Please enter player O name: ");
 }
 let nameO = prompt("Please enter player O name ");
 while (nameO == '') {
-    nameO = prompt("Can not insert empty name. Please enter player O name ");
+    nameO = prompt("Player O name cannot be empty. Please enter player O name:");
 }
 let resultsArray = [0, 0, 0];
 let playerXNumOfWins = 0;
@@ -153,7 +165,8 @@ let playerONumOfWins = 0;
 let numDraws = 0;
 let wantNewGame = 'Y';
 
-while (wantNewGame == 'y' || wantNewGame == 'Y') {
+while (wantNewGame.toLowerCase() === 'y') {
+    let startTime = Date.now();
     let board = [];
     let boardSizeInput = 0;
     boardSizeInput = +prompt('Please enter a board size');
@@ -207,6 +220,9 @@ while (wantNewGame == 'y' || wantNewGame == 'Y') {
     console.log(`${nameX} has won ${resultsArray[0]} times`);
     console.log(`${nameO} has won ${resultsArray[1]} times`);
     console.log(`you had draw ${resultsArray[2]} times`);
+    let endTime = Date.now();
+    let elapsedTimeInSeconds = (endTime - startTime) / 1000;
+    console.log(`The game lasted for ${elapsedTimeInSeconds} seconds`);
     wantNewGame = prompt('Do you want to play a new game? Y/N ');
     while (validateNewGameInput(wantNewGame) == false) {
         wantNewGame = prompt('Please insert only Y/N ! Do you want to play a new game? Y/N ');
@@ -214,6 +230,3 @@ while (wantNewGame == 'y' || wantNewGame == 'Y') {
 }
 
 
-
-
-//   console.log(`${row1}\n${row2}\n${row3}`);
