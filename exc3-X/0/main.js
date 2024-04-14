@@ -131,7 +131,7 @@ function printBoard(boardXO, boardSize) {
         console.log(boardXO[i]);
     }
 }
-// function printBoard(boardXO, boardSize) {
+// function printBoard(boardXO, boardSize) {              //// Dont realy understand how it works
 //     const xColor = '\x1b[31m'; // Red color for X
 //     const oColor = '\x1b[34m'; // Blue color for O
 //     const resetColor = '\x1b[0m'; // Reset color back to default
