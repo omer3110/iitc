@@ -1,0 +1,172 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+.main-container {
+    width: 180px;
+    margin: auto;
+    margin-top: 30px;
+    background-color: #A8A8A8;
+    border-radius: 10px;
+    padding-top: 1px;
+    border: 3px solid #333333;
+}
+
+.topBarWrapper {
+    background-color: #EEEEEE;
+    margin: 0.3em;
+    border-radius: 10px;
+    padding: 0.2em;
+}
+
+#clearButton {
+    background-color: #FEB191;
+    border: 1.5px solid #FF5252;
+    border-radius: 10px 0 0 10px;
+    margin: 0;
+    font-weight: normal;
+}
+
+.topBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #DDFCFF;
+    border-radius: 10px;
+    margin: 0.1em;
+    border: 1.5px solid gray;
+    border-collapse: collapse;
+}
+
+button {
+    background-color: #CBD6FE;
+    border-radius: 50%;
+    border: 1.5px solid gray;
+    height: 30px;
+    width: 30px;
+    margin: 0.2em;
+    padding: 0;
+    font-weight: bold;
+}
+
+#clearButton:hover {
+    background-color: #FF5252;
+}
+
+#signs-buttons {
+    background-color: #02CA00;
+    border: 1.5px solid #484848;
+}
+
+#signs-buttons:focus {
+    background-color: #FEE38D;
+    border: 1.5px solid #FF6600;
+}
+
+#signs-buttons-equal {
+    background-color: #02CA00;
+    border: 1.5px solid #484848;
+}
+
+#signs-buttons-equal:hover {
+    background-color: #FEE38D;
+}
+
+button:hover {
+    background-color: #FEE38D;
+    border: 1.5px solid #FF6600;
+}
+
+.buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+.signs-buttons-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid grey;
+    background-color: #EEEEEE;
+    padding: 0.1em;
+    border-radius: 10px;
+}
+
+.numbers-buttons-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+}
+
+#numScreen {
+    padding-inline-end: 0.2em;
+}

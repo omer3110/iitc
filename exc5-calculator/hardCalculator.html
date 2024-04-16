@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="topBarWrapper">
+            <div class="topBar">
+                <button id="clearButton" onclick="clearNumbers()">CE</button>
+                <p id="numScreen">0</p>
+
+            </div>
+        </div>
+        <div class="buttons-wrapper">
+            <div class="numbers-buttons-wrapper">
+                <div class="buttons-row">
+                    <button onclick="addNumberToCalculator(num = 7)">7</button><button
+                        onclick="addNumberToCalculator(num = 8)">8</button><button
+                        onclick="addNumberToCalculator(num = 9)">9</button>
+                </div>
+                <div class="buttons-row">
+                    <button onclick="addNumberToCalculator(num = 4)">4</button><button
+                        onclick="addNumberToCalculator(num = 5)">5</button><button
+                        onclick="addNumberToCalculator(num = 6)">6</button>
+                </div>
+                <div class="buttons-row">
+                    <button onclick="addNumberToCalculator(num = 1)">1</button><button
+                        onclick="addNumberToCalculator(num = 2)">2</button><button
+                        onclick="addNumberToCalculator(num = 3)">3</button>
+                </div>
+                <div class="buttons-row">
+                    <button onclick="addNumberToCalculator(num = 0)">0</button>
+                    <button onclick="addDotToCalculator()">.</button>
+                    <button id="signs-buttons-equal" onclick="calculate()">=</button>
+                </div>
+            </div>
+            <div class="signs-buttons-wrapper">
+                <button id="signs-buttons" onclick="setOperator('÷')">÷</button>
+                <button id="signs-buttons" onclick="setOperator('x')">x</button>
+                <button id="signs-buttons" onclick="setOperator('-')">-</button>
+                <button id="signs-buttons" onclick="setOperator('+')">+</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js">
+
+    </script>
+</body>
+
+</html>
