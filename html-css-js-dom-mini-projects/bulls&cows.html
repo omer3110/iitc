@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <h3>Welcome to Omer's Bulls and Cows</h3>
+        <p id="afterGiveUp">The secret numbers is: ????</p>
+        <!-- <p>Discover the hidden code!</p> -->
+        <!-- <p> Click, or use arrow keys, to change your guess in each box.</p> -->
+        <!-- <p> (Bulls and Cows is similar to, but came before, the board game MastermindTM*)</p> -->
+        <!-- <p> Bulls = correct code, correct position.</p> -->
+        <!-- <p> Cows = correct code, wrong position.</p> -->
+        <!-- <div class="game"> -->
+        <input type="number" id="num1" min="1" max="9" maxlength="1">
+        <input type="number" id="num2" min="0" max="9" maxlength="1">
+        <input type="number" id="num3" min="0" max="9" maxlength="1">
+        <input type="number" id="num4" min="0" max="9" maxlength="1">
+        <button onclick="checkUserGuess()">Guess</button>
+        <button onclick="giveUp()">Give Up</button>
+        <button onclick="newGame()">New Game</button>
+        <!-- <button onclick="showHistory()">Game History</button> -->
+        <div id="resultsBullsAndCows">Bulls: , Cows: </div>
+        <div id="winMessages"> </div>
+        <!-- <div id="history">
+            <table></table>
+        </div> -->
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
