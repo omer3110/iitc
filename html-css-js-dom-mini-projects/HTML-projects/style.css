@@ -1,0 +1,239 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+
+body {
+    text-align: center;
+    background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+}
+
+.navBar {
+    background-color: #200E3D;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    font-family: "Work Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    padding: 0.8em;
+    background-color: #200E3D;
+    border: 0px;
+    color: white;
+}
+
+.robsIntroductionContainer {
+    text-align: center;
+}
+
+#rob1 {
+    margin: auto;
+    border-radius: 50%;
+    padding: 4em;
+    padding-bottom: 2em;
+    width: 600px;
+}
+
+#robsIntroduction {
+    color: #000000;
+    font-family: "Days One", sans-serif;
+    font-size: 24px;
+    padding-bottom: 1em;
+}
+
+#aboutMeHeader {
+    font-family: "Days One", sans-serif;
+    font-size: 24px;
+    padding-bottom: 0.5em;
+}
+
+.aboutMe {
+    background-color: white;
+    margin: 3em;
+    margin-inline: 30em;
+    padding: 5em;
+}
+
+.wrapperAbotMe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#rob2 {
+    height: 400px;
+    width: 450px;
+    overflow: hidden;
+}
+
+.paragraphes p {
+    text-align: left;
+    padding: 0.5em;
+    font-family: "Work Sans", sans-serif;
+    width: 400px;
+}
+
+#projects {
+    color: white;
+    margin-bottom: 1em;
+    font-family: "Days One", sans-serif;
+    font-size: 1.2em;
+}
+
+.images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.projImage {
+    border-radius: 3% 3% 0 0;
+    width: 300px;
+    height: 280px;
+}
+
+.onProjImage {
+    color: #000000;
+    background-color: white;
+    padding: 0.5em;
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
+.contactUs {
+    background-color: #3B386D;
+    color: white;
+    padding-top: 60px;
+}
+
+.form {
+    display: flex;
+    margin-inline: 18em;
+    padding-top: 20px;
+    justify-content: center;
+}
+
+.leftForm {
+    display: flex;
+    flex-direction: column;
+    padding-right: 30px;
+}
+
+input {
+
+    border-radius: 5px;
+}
+
+label {
+    text-align: left;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    font-size: 0.8em;
+
+}
+
+.message-submit {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.footer {
+    color: white;
+    background-color: #1F2027;
+}
+
+#message {
+    width: 400px;
+    height: 200px;
+}
+
+.submit {
+    background-color: lightblue;
+    border-radius: 5px;
+    color: #1d3d5f;
+    border: 0;
+    width: 140px;
+    height: 40px;
+    margin-top: 40px;
+    margin-left: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    align-self: flex-end;
+
+}
+
+.submit:hover {
+    background-color: #000000;
+    color: white;
+}

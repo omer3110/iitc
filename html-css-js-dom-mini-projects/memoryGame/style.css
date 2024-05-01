@@ -1,0 +1,39 @@
+@import url(reset.css);
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+img {
+    display: none;
+    height: 60px;
+}
+
+.revealed img {
+    display: block;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    height: 100px;
+    width: 100px;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+:hover.card {
+    background-color: rgb(128, 128, 128);
+}
+
+.board-container {
+    display: grid;
+
+
+}
