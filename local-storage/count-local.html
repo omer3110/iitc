@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="countIncreaseByOne()">Count+1</button>
+    <p class="show-count"></p>
+
+    <script>
+
+        let displayCount = document.querySelector(".show-count");
+        let counter = localStorage.getItem("count") || 0; // Initialize counter with stored value or 0 if not available
+
+        function countIncreaseByOne() {
+            counter++;
+            localStorage.setItem("count", counter);
+            console.log(`Count set to ${counter}`);
+            displayCount.innerHTML = counter;
+        }
+
+    </script>
+</body>
+
+</html>

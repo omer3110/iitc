@@ -192,6 +192,9 @@
 // console.log(`The lowest number is ${min_num} and the highest is ${max_num}`);
 
 // loop_10_m
+/**
+ * 
+ */
 let number = +prompt("Please enter a number:");
 let divisor = 1;
 while (number >= divisor * 10) {

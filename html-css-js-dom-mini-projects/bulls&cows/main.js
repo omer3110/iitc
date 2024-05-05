@@ -87,14 +87,15 @@ function newGame() {
     elemGiveUp.innerHTML = `The secret numbers is: ????`
     elemResults.innerHTML = `Bulls: , Cows: `;
 }
-// function pushObjHistory() {
-//     objHistory.push({ attempts: guessesCounter, gameTime: elapsedTimeInSeconds })
-//     console.log(objHistory);
-// }
-// function showHistory() {
-//     for (let i = 0; i < objHistory.length; i++) {
-//         let historyMessage = `<tr><td>${objHistory[i]["attempts"]}</td><td>${objHistory[i]["gameTime"]}</td>`;
-//         elemHistory.innerHTML += historyMessage
+function pushObjHistory() {
+    objHistory.push({ attempts: guessesCounter, gameTime: elapsedTimeInSeconds })
+    console.log(objHistory);
+}
+function showHistory() {
+    elemHistory.innerHTML = '';
+    for (let i = 0; i < objHistory.length; i++) {
+        let historyMessage = `<tr><td>${objHistory[i]["attempts"]}</td><td>${objHistory[i]["gameTime"]}</td>`;
+        elemHistory.innerHTML += historyMessage
 
-//     }
-// }
+    }
+}

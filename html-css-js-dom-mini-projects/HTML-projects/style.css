@@ -206,10 +206,7 @@ label {
     width: 60%;
 }
 
-.footer {
-    color: white;
-    background-color: #1F2027;
-}
+
 
 #message {
     width: 400px;
@@ -235,5 +232,40 @@ label {
 
 .submit:hover {
     background-color: #000000;
+    color: white;
+}
+
+footer {
+    color: white;
+    background-color: #1F2027;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.social-media {
+    font-size: 200%;
+    width: auto;
+    margin-left: auto;
+}
+
+.social-media {
+    font-size: 200%;
+    width: auto;
+    margin-left: auto;
+}
+
+.social-media a i {
+    color: white;
+    transition: 0.2s;
+}
+
+.social-media a i:hover {
+    color: lightblue;
+    transition: 0.2;
+}
+
+.copyright {
     color: white;
 }
