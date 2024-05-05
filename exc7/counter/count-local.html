@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="display: flex;">
+        <div>
+            <button onclick="countIncreaseByOne()">Increament</button>
+            <p class="show-count"></p>
+        </div>
+        <div>
+            <button onclick="secCountIncreaseByOne()">Second Increament</button>
+            <p class="second-show-count"></p>
+        </div>
+    </div>
+    <script>
+
+        let displayCount = document.querySelector(".show-count");
+        let counter = localStorage.getItem("count") || 0; // Initialize counter with stored value or 0 if not available
+
+        function countIncreaseByOne() {
+            counter++;
+            localStorage.setItem("count", counter);
+            console.log(`Count set to ${counter}`);
+            displayCount.innerHTML = counter;
+        }
+
+        let secDisplayCount = document.querySelector(".second-show-count");
+        let secCounter = localStorage.getItem("secCount") || 0; // Initialize counter with stored value or 0 if not available
+
+        function secCountIncreaseByOne() {
+            secCounter++;
+            localStorage.setItem("secCount", secCounter);
+            console.log(`Count set to ${secCounter}`);
+            secDisplayCount.innerHTML = secCounter;
+        }
+    </script>
+</body>
+
+</html>
