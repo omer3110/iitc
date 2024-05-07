@@ -44,6 +44,7 @@ function addToDoItem(item) {
         // let index = toDoArray.indexOf(item);
         // toDoArray.splice(index, 1);
         // localStorage.setItem("checkList", JSON.stringify(toDoArray));
+        console.log(li);
         if (li.style.color == "black") {
             li.style.color = "green";
         }

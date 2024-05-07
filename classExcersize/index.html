@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span>a</span>
+    <span>b</span>
+    <span>c</span>
+
+
+    <div id="div1" style="height: 300px;width: 300px; background-color: rgb(255, 80, 80);">Press counter</div>
+    <script>
+        let spans = document.querySelectorAll("span");
+        let div = document.querySelector("#div1");
+        console.log(spans);
+
+        spans.forEach(clickHandler);
+
+        function clickHandler(span) {
+            //    span.onclick = function () {
+            //        console.log(span.innerText);
+            //    }
+            span.addEventListener("click", function () {
+                console.log(span.innerText);
+            })
+        }
+
+        let timer = 0;
+        div.addEventListener("mousedown", function () {
+            timer = new Date();
+            div.innerHTML = "Clicked";
+        })
+        div.addEventListener("mouseup", function () {
+            timer = new Date() - timer;
+            timer = timer / 1000;
+            console.log(`You press the mpouse for ${timer}S`);
+            div.innerHTML = `You press the mouse for ${timer}S`;
+        })
+
+
+    </script>
+</body>
+
+
+</html>

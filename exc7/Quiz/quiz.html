@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Quiz</title>
+    <style>
+        ul {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainQuiz">
+        <h1>Football Quiz</h1>
+        <ol>
+            <li>
+                <p>Who is the all-time leading goal scorer in FIFA World Cup history?</p>
+                <ul>
+                    <li class="wrongAnswer"> <input onclick="loadToLocalStorage(id)" id="q1a1" type="radio"
+                            name="question1[]" value="Lionel Messi">Lionel Messi
+                    </li>
+                    <li class="wrongAnswer"><input onclick="loadToLocalStorage(id)" id="q1a2" type="radio"
+                            name="question1[]" value="Cristiano Ronaldo">Cristiano
+                        Ronaldo
+                    </li>
+                    <li class="correctAnswer"><input onclick="loadToLocalStorage(id)" id="q1a3" type="radio"
+                            name="question1[]" value="Miroslav Klose">Miroslav
+                        Klose
+                    </li>
+                    <li class="wrongAnswer"><input onclick="loadToLocalStorage(id)" id="q1a4" type="radio"
+                            name="question1[]" value="Pelé">
+                        Pelé
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <button onclick="checkAnswers()"> Submit</button>
+        <p class="results"></p>
+    </div>
+
+
+    <script src="quiz_main.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<li>
+    <p>Which country has won the most FIFA World Cup titles?</p>
+    <ul>
+        <li onclick="markSelectedAnswer()" class="correctAnswer">Brazil</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Germany</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Italy</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Argentina</li>
+    </ul>
+</li>
+
+<li>
+    <p>Who won the FIFA Ballon d'Or in 2020?</p>
+    <ul>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Lionel Messi</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Cristiano Ronaldo</li>
+        <li onclick="markSelectedAnswer()" class="correctAnswer">Robert Lewandowski</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Neymar</li>
+    </ul>
+</li>
+
+<li>
+    <p>Which club has won the most UEFA Champions League titles?</p>
+    <ul>
+        <li onclick="markSelectedAnswer()" class="correctAnswer">Real Madrid</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Barcelona</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Bayern Munich</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Liverpool</li>
+    </ul>
+</li>
+
+<li>
+    <p>Who is the current manager of the English national football team?</p>
+    <ul>
+        <li onclick="markSelectedAnswer()" class="correctAnswer">Gareth Southgate</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Jürgen Klopp</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Pep Guardiola</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Jose Mourinho</li>
+    </ul>
+</li>
+
+<li>
+    <p>Which player has won the most UEFA Champions League titles?</p>
+    <ul>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Cristiano Ronaldo</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Lionel Messi</li>
+        <li onclick="markSelectedAnswer()" class="correctAnswer">Dani Alves</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Ryan Giggs</li>
+    </ul>
+</li>
+
+<li>
+    <p>In which year did the United States host the FIFA World Cup?</p>
+    <ul>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">1998</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">2002</li>
+        <li onclick="markSelectedAnswer()" class="correctAnswer">1994</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">2010</li>
+    </ul>
+</li>
+
+<li>
+    <p>Which player holds the record for the most goals scored in a single UEFA Champions League season?</p>
+    <ul>
+        <li onclick="markSelectedAnswer(this)" class="wrongAnswer">Cristiano Ronaldo</li>
+        <li onclick="markSelectedAnswer(this)" class="wrongAnswer">Lionel Messi</li>
+        <li onclick="markSelectedAnswer(this)" class="correctAnswer">Robert Lewandowski</li>
+        <li onclick="markSelectedAnswer(this)" class="wrongAnswer">Cristiano Ronaldo</li>
+    </ul>
+</li>
+
+<li>
+    <p>Who won the FIFA Women's World Cup in 2019?</p>
+    <ul>
+        <li onclick="markSelectedAnswer()" class="correctAnswer">United States</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Germany</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Brazil</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">France</li>
+    </ul>
+</li>
+
+<li>
+    <p>Which country has won the most Copa América titles?</p>
+    <ul>
+        <li onclick="markSelectedAnswer()" class="correctAnswer">Uruguay</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Brazil</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Argentina</li>
+        <li onclick="markSelectedAnswer()" class="wrongAnswer">Chile</li>
+    </ul>
+</li> -->

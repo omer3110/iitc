@@ -17,5 +17,5 @@ function sortArray(array) {
     return sortedArray;
 }
 
-let numArray = [2, 4, 1, 6, 5, 87, 3, 2];
+let numArray = [2, 4, 0, 1, 6, 5, 87, 3, 2];
 console.log(sortArray(numArray));
