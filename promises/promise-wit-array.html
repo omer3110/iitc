@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="result"></p>
+    <script>
+        let numArray = [15, 41, 5, 8, 2, 4,];
+
+        let result = document.querySelector('.result');
+        const resolveHandler = (index) => result.innerHTML = `The minimum value is at index: ${index}`;
+        const rejectHandler = (message) => result.innerHTML = message;
+
+        function minIndexCheck(arr) {
+            const promise = new Promise((resolve, reject) => {
+                if (arr.length === 0) {
+                    return reject('Array is null');
+                }
+                let minSafe = Number.MAX_SAFE_INTEGER;
+                let minIndex = 0;
+                for (i = 0; i < arr.length; i++) {
+                    if (isNaN(arr[i])) {
+                        return reject('Array not contains only numbers');
+                    }
+                    if (arr[i] < minSafe) {
+                        minSafe = arr[i];
+                        minIndex = i;
+                    }
+                }
+                resolve(minIndex);
+            });
+            return promise;
+        }
+
+        let promise = minIndexCheck(numArray);
+        promise.then(resolveHandler).catch(rejectHandler);
+    </script>
+</body>
+
+</html>

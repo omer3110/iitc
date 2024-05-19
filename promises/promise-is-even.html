@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <input class="input" type="text" placeholder="insert number">
+    <button onclick="check()">check if even</button>
+    <p class="result"></p>
+    <script>
+
+
+        // --- function return promise
+        let result = document.querySelector('.result');
+        const resolveHandler = (val) => result.innerHTML = val;
+        const rejectHandler = (val) => result.innerHTML = val;
+        function isEvenAsync(val) {
+            const promise = new Promise((resolve, reject) => {
+                if (Number(val)) {
+                    resolve(val % 2 == 0);
+                } else {
+                    reject('Not a number');
+                }
+            });
+            return promise;
+        }
+
+        function check() {
+            let valueOfInput = document.querySelector('.input');
+            valueOfInput = valueOfInput.value;
+            let promise = isEvenAsync(valueOfInput);
+            promise.then(resolveHandler).catch(rejectHandler);
+        }
+
+    </script>
+</body>
+
+</html>
