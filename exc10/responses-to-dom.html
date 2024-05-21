@@ -25,11 +25,12 @@
 </head>
 
 <body>
+    <div id="counter"></div>
     <div id="table-container"></div>
 
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <script>
-        const url = "https://jsonplaceholder.typicode.com/posts";
+        const url = "https://jsonplaceholder.typicode.com/comments";
 
 
         axios.get(url)
@@ -42,6 +43,8 @@
                 console.log(error);
             });
 
+        let commentsCounter = 0;
+        let elemCounter = document.querySelector("#counter")
         function buildTable(data) {
             const tableContainer = document.getElementById('table-container');
             const table = document.createElement('table');
@@ -50,7 +53,7 @@
 
             // Create header row
             const headerRow = document.createElement('tr');
-            const headers = ['User ID', 'ID', 'Title', 'Body'];
+            const headers = ['Post ID', 'ID', 'Name', 'Email', 'Body'];
             headers.forEach(headerText => {
                 const th = document.createElement('th');
                 th.textContent = headerText;
@@ -62,7 +65,7 @@
             data.forEach(item => {
                 const row = document.createElement('tr');
                 const userIdCell = document.createElement('td');
-                userIdCell.textContent = item.userId;
+                userIdCell.textContent = item.postId;
                 row.appendChild(userIdCell);
 
                 const idCell = document.createElement('td');
@@ -70,20 +73,27 @@
                 row.appendChild(idCell);
 
                 const titleCell = document.createElement('td');
-                titleCell.textContent = item.title;
+                titleCell.textContent = item.name;
                 row.appendChild(titleCell);
+
+                const emailCell = document.createElement('td');
+                emailCell.textContent = item.email;
+                row.appendChild(emailCell);
 
                 const bodyCell = document.createElement('td');
                 bodyCell.textContent = item.body;
                 row.appendChild(bodyCell);
 
                 tbody.appendChild(row);
+                commentsCounter++;
             });
 
             table.appendChild(thead);
             table.appendChild(tbody);
             tableContainer.appendChild(table);
+            elemCounter.innerHTML = commentsCounter;
         }
+
     </script>
 </body>
 

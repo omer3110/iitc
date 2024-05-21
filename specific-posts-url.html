@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #372d2d;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table class="posts">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script>
+        const urlArray = ["https://jsonplaceholder.typicode.com/posts?userId=2", "https://jsonplaceholder.typicode.com/posts?userId=5", "https://jsonplaceholder.typicode.com/posts?userId=8"];
+        let elemPost = document.querySelector('.posts tbody');
+
+        Promise.all(urlArray.map(url => axios.get(url)))
+            .then(responses => {
+                responses.forEach(response => {
+                    response.data.slice(0, 3).forEach(post => {
+                        let row = document.createElement('tr');
+                        let userIdCell = document.createElement('td');
+                        userIdCell.textContent = post.userId;
+                        let idCell = document.createElement('td');
+                        idCell.textContent = post.id;
+                        let titleCell = document.createElement('td');
+                        titleCell.textContent = post.title;
+                        let bodyCell = document.createElement('td');
+                        bodyCell.textContent = post.body;
+                        row.appendChild(userIdCell);
+                        row.appendChild(idCell);
+                        row.appendChild(titleCell);
+                        row.appendChild(bodyCell);
+                        elemPost.appendChild(row);
+                    });
+                });
+            })
+            .catch(function (error) {
+                // handle error
+                console.error(error);
+            });
+    </script>
+</body>
+
+</html>

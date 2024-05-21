@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="clickHandler()">date</button>
+    <script>
+
+        const promise = new Promise((resolve, reject) => resolve(new Date));
+        const resolveHandler = val => console.log(val);
+
+        function clickHandler() {
+            promise.then(resolveHandler);
+        }
+
+    </script>
+</body>
+
+</html>
