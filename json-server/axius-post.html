@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <h3>Submit new post to DB</h3>
+        <form id="new-post-form" class="new-post-form">
+            <input id="title" type="text" placeholder="Title" required>
+            <input id="views" type="number" placeholder="Views" required>
+            <button id="submit" type="submit">Submit</button>
+        </form>
+        <div class="message"></div>
+        <h4>Post table</h4>
+        <div id="table-container"></div>
+
+        <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+        <script>
+            const urlPosts = "http://localhost:8001/posts";
+            let elemMessage = document.querySelector('.message');
+
+            // Function to fetch and build the table
+            function fetchAndBuildTable() {
+                axios.get(urlPosts)
+                    .then(function (response) {
+                        const data = response.data;
+                        buildTable(data);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            }
+
+            // Initial table load
+            fetchAndBuildTable();
+
+            function buildTable(data) {
+                const tableContainer = document.getElementById("table-container");
+
+                const table = document.createElement("table");
+                table.setAttribute("border", "1");
+
+                const headers = ["ID", "Title", "Views", "Actions"];
+                const headerRow = document.createElement("tr");
+                headers.forEach(headerText => {
+                    const th = document.createElement("th");
+                    th.textContent = headerText;
+                    headerRow.appendChild(th);
+                });
+                table.appendChild(headerRow);
+
+                data.forEach(post => {
+                    const row = document.createElement("tr");
+                    const idCell = document.createElement("td");
+                    const titleCell = document.createElement("td");
+                    const viewsCell = document.createElement("td");
+                    const actionCell = document.createElement("td");
+
+                    idCell.textContent = post.id;
+                    titleCell.textContent = post.title;
+                    viewsCell.textContent = post.views;
+                    const deleteButton = document.createElement("button");
+                    deleteButton.textContent = "X";
+                    deleteButton.classList.add("delete-button");
+                    deleteButton.onclick = () => deletePost(post.id);
+
+                    actionCell.appendChild(deleteButton);
+                    row.appendChild(idCell);
+                    row.appendChild(titleCell);
+                    row.appendChild(viewsCell);
+                    row.appendChild(actionCell);
+
+                    table.appendChild(row);
+                });
+                tableContainer.innerHTML = "";
+                tableContainer.appendChild(table);
+            }
+
+            document.getElementById('new-post-form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent form submission
+                newPost();
+            });
+            function newPost() {
+                let title = document.querySelector('#title').value;
+                let views = document.querySelector('#views').value;
+
+                if (validation(title, views)) {
+                    axios.post(urlPosts, {
+                        "title": title,
+                        "views": parseInt(views)
+                    }).then(response => {
+                        elemMessage.textContent = "Post added successfully!";
+                        document.querySelector('#title').value = '';
+                        document.querySelector('#views').value = '';
+                        fetchAndBuildTable();
+                    }).catch(function (error) {
+                        console.error(error);
+                        elemMessage.textContent = "Failed to add post!";
+                    });
+                }
+            }
+
+            function deletePost(postId) {
+                axios.delete(`${urlPosts}/${postId}`)
+                    .then(response => {
+                        elemMessage.textContent = `Post ${postId} deleted successfully!`;
+                        fetchAndBuildTable();
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                        elemMessage.textContent = `Failed to delete post ${postId}!`;
+                    });
+            }
+
+            function validation(title, views) {
+                if (title === "" || views === "") {
+                    alert('Cannot submit post without title or views');
+                    return false;
+                } else if (!/^\d+$/.test(views)) {
+                    alert('Views must contain only numeric characters');
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>

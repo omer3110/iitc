@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="alert('alert')">alert</button>
+    <script>
+
+        const world = new Promise((resolve, reject) => {
+            setTimeout(() => { resolve('world'); }, 2000);
+        });
+        const error = new Promise((resolve, reject) => reject('error'));
+
+
+        const asyncFunction = async () => {
+            try {
+                console.log(new Date());
+                // Await the resolution of the second promise first
+                const worldMessage = await world;
+                console.log(worldMessage, new Date());
+                const hello = new Promise((resolve, reject) => {
+                    setTimeout(() => { resolve('hello'); }, 1000);
+                });
+
+                // Await the resolution of the first promise
+                const helloMessage = await hello;
+                console.log(helloMessage, new Date());
+                await error;
+            }
+            catch (error) {
+                console.log(error);
+            }
+            console.log('after');
+        }
+
+        // Call the async function
+        asyncFunction();
+
+
+    </script>
+
+</body>
+
+</html>
